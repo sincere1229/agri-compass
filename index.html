@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>アグリ・コンパス | 農業4年目が教える就農・農ライフの入口</title>
+<meta name="description" content="就農スタイル診断・市民農園申込・無農薬野菜セット・収穫体験・新規就農補助金情報。埼玉県嵐山町の農業実践者が本音で教えるリアルな農ライフガイド。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --green-deep: #1e4d0f;
+  --green-mid: #3a7d1e;
+  --green-light: #6ab830;
+  --green-pale: #eaf5d8;
+  --earth: #7a5c1e;
+  --earth-light: #f4e8c8;
+  --cream: #f9f7f1;
+  --text: #1a1a1a;
+  --text-muted: #5a5a5a;
+  --white: #ffffff;
+  --accent: #c8f06b;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  line-height: 1.8;
+  overflow-x: hidden;
+}
+
+/* ===== NAV ===== */
+nav {
+  position: fixed;
+  top:0; left:0; right:0;
+  z-index: 200;
+  background: rgba(30,77,15,0.95);
+  backdrop-filter: blur(10px);
+  padding: 0.9rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-logo {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.nav-logo span { color: var(--accent); }
+.nav-links { display:flex; gap:1.5rem; list-style:none; }
+.nav-links a {
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  font-size: 0.82rem;
+  letter-spacing: 0.05em;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--accent); }
+.nav-cta {
+  background: var(--accent) !important;
+  color: var(--green-deep) !important;
+  padding: 0.4rem 1.1rem;
+  border-radius: 2rem;
+  font-weight: 700 !important;
+}
+
+/* ===== HERO ===== */
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(160deg, #0f2a07 0%, #1e4d0f 45%, #2d6b1a 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 6rem 2rem 4rem;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 15% 60%, rgba(106,184,48,0.18) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 25%, rgba(200,240,107,0.12) 0%, transparent 50%);
+}
+.hero-eyebrow {
+  position: relative;
+  display: inline-block;
+  border: 1px solid rgba(200,240,107,0.5);
+  color: var(--accent);
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  padding: 0.35rem 1.2rem;
+  border-radius: 2rem;
+  margin-bottom: 1.5rem;
+}
+.hero-title {
+  position: relative;
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(2.4rem, 7vw, 5rem);
+  color: #fff;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 30px rgba(0,0,0,0.4);
+}
+.hero-title em {
+  font-style: normal;
+  color: var(--accent);
+}
+.hero-sub {
+  position: relative;
+  color: rgba(255,255,255,0.7);
+  font-size: 1rem;
+  margin-bottom: 3rem;
+  line-height: 1.9;
+}
+.hero-actions {
+  position: relative;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.btn-primary {
+  background: var(--green-light);
+  color: #fff;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.9rem 2.2rem;
+  border-radius: 3rem;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.35); }
+.btn-outline {
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.9rem 2.2rem;
+  border-radius: 3rem;
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.35);
+  transition: background 0.2s;
+  cursor: pointer;
+  display: inline-block;
+}
+.btn-outline:hover { background: rgba(255,255,255,0.2); }
+
+.hero-scroll {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255,255,255,0.4);
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  animation: bounce 2s ease-in-out infinite;
+}
+@keyframes bounce {
+  0%,100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(6px); }
+}
+
+/* ===== SHARED ===== */
+section { padding: 5rem 1.5rem; }
+.container { max-width: 940px; margin: 0 auto; }
+.section-eye {
+  font-size: 0.72rem;
+  letter-spacing: 0.3em;
+  color: var(--green-mid);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+}
+.section-h {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  color: var(--green-deep);
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+}
+.section-lead {
+  color: var(--text-muted);
+  font-size: 0.97rem;
+  line-height: 2;
+  max-width: 640px;
+}
+
+/* ===== QUIZ ===== */
+#quiz { background: var(--white); }
+.quiz-box {
+  background: var(--cream);
+  border: 1.5px solid var(--green-pale);
+  border-radius: 1.25rem;
+  padding: 2.5rem;
+  margin-top: 2rem;
+  max-width: 700px;
+}
+.quiz-step { display: none; }
+.quiz-step.active { display: block; }
+.quiz-q {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--green-deep);
+  margin-bottom: 1.2rem;
+}
+.quiz-num {
+  font-size: 0.78rem;
+  color: var(--green-mid);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+}
+.quiz-opts { display: flex; flex-direction: column; gap: 0.6rem; }
+.quiz-opt {
+  background: var(--white);
+  border: 1.5px solid #d4e8b8;
+  border-radius: 0.75rem;
+  padding: 0.85rem 1.1rem;
+  cursor: pointer;
+  font-size: 0.93rem;
+  transition: border-color 0.15s, background 0.15s;
+  text-align: left;
+}
+.quiz-opt:hover { border-color: var(--green-light); background: var(--green-pale); }
+.quiz-opt.selected { border-color: var(--green-mid); background: var(--green-pale); font-weight: 700; }
+.quiz-progress {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 1.5rem;
+}
+.quiz-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #d4e8b8;
+  transition: background 0.3s;
+}
+.quiz-dot.done { background: var(--green-mid); }
+.quiz-dot.current { background: var(--green-light); }
+.quiz-result { display: none; }
+.quiz-result.active { display: block; }
+.result-card {
+  background: var(--green-deep);
+  color: #fff;
+  border-radius: 1rem;
+  padding: 2rem;
+  margin-top: 1.5rem;
+}
+.result-type {
+  font-size: 0.78rem;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+.result-title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+.result-text {
+  font-size: 0.93rem;
+  color: rgba(255,255,255,0.82);
+  line-height: 2;
+  margin-bottom: 1.5rem;
+}
+.result-next {
+  background: var(--accent);
+  color: var(--green-deep);
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 0.7rem 1.5rem;
+  border-radius: 2rem;
+  text-decoration: none;
+  display: inline-block;
+  margin-right: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+.result-reset {
+  color: rgba(255,255,255,0.6);
+  font-size: 0.85rem;
+  cursor: pointer;
+  text-decoration: underline;
+  background: none;
+  border: none;
+  font-family: inherit;
+}
+
+/* ===== SERVICES ===== */
+#services { background: var(--cream); }
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 1.25rem;
+  margin-top: 2.5rem;
+}
+.service-card {
+  background: var(--white);
+  border: 1px solid #e0edcc;
+  border-radius: 1.1rem;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.service-card:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(30,77,15,0.1); }
+.service-img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  background: var(--green-pale);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.5rem;
+  color: var(--green-mid);
+  min-height: 160px;
+}
+.service-img img { width:100%; height:100%; object-fit:cover; display:block; }
+.service-body { padding: 1.25rem 1.4rem 1.5rem; }
+.service-badge {
+  display: inline-block;
+  background: var(--green-pale);
+  color: var(--green-deep);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 0.2rem 0.7rem;
+  border-radius: 2rem;
+  margin-bottom: 0.75rem;
+}
+.service-name {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--green-deep);
+  margin-bottom: 0.4rem;
+}
+.service-desc {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+.service-price {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--green-mid);
+}
+.service-price-sub { font-size: 0.8rem; color: var(--text-muted); font-weight: 400; }
+.service-link {
+  display: block;
+  margin-top: 1rem;
+  background: var(--green-mid);
+  color: #fff;
+  text-align: center;
+  padding: 0.65rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 700;
+  transition: background 0.2s;
+}
+.service-link:hover { background: var(--green-deep); }
+
+/* ===== ADVICE ===== */
+#advice { background: var(--white); }
+.advice-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+.advice-card {
+  border: 1px solid var(--green-pale);
+  border-radius: 1rem;
+  padding: 1.4rem;
+}
+.advice-num {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--green-pale);
+  line-height: 1;
+  margin-bottom: 0.4rem;
+  font-family: 'Noto Serif JP', serif;
+}
+.advice-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--green-deep);
+  margin-bottom: 0.5rem;
+}
+.advice-text {
+  font-size: 0.87rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+.advice-tag {
+  display: inline-block;
+  margin-top: 0.75rem;
+  background: #fee;
+  color: #b03030;
+  font-size: 0.75rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 2rem;
+  font-weight: 700;
+}
+.advice-tag.good { background: var(--green-pale); color: var(--green-deep); }
+
+/* ===== SUBSIDY ===== */
+#subsidy { background: var(--green-deep); }
+#subsidy .section-eye { color: var(--accent); }
+#subsidy .section-h { color: #fff; }
+#subsidy .section-lead { color: rgba(255,255,255,0.72); }
+.subsidy-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.1rem;
+  margin-top: 2.5rem;
+}
+.subsidy-card {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 1rem;
+  padding: 1.5rem;
+}
+.sub-badge {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--green-deep);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.2rem 0.7rem;
+  border-radius: 2rem;
+  margin-bottom: 0.75rem;
+}
+.sub-title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+.sub-amount {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--accent);
+  font-family: 'Noto Serif JP', serif;
+  margin-bottom: 0.25rem;
+}
+.sub-period {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 0.75rem;
+}
+.sub-conditions {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.sub-conditions li {
+  font-size: 0.83rem;
+  color: rgba(255,255,255,0.72);
+  padding-left: 1rem;
+  position: relative;
+  line-height: 1.6;
+}
+.sub-conditions li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.7rem;
+  top: 0.15rem;
+}
+.subsidy-note {
+  margin-top: 2rem;
+  background: rgba(255,255,255,0.07);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 0.5rem 0.5rem 0;
+  padding: 1rem 1.25rem;
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.8;
+}
+
+/* ===== AFFILIATE ===== */
+#affiliate { background: var(--cream); }
+.affiliate-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.aff-card {
+  background: var(--white);
+  border: 1px solid #e0edcc;
+  border-radius: 1rem;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.aff-icon { font-size: 1.8rem; }
+.aff-title { font-size: 0.97rem; font-weight: 700; color: var(--green-deep); }
+.aff-desc { font-size: 0.85rem; color: var(--text-muted); line-height: 1.7; flex:1; }
+.aff-reward {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--earth);
+  background: var(--earth-light);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2rem;
+  display: inline-block;
+}
+.aff-link {
+  margin-top: 0.25rem;
+  font-size: 0.85rem;
+  color: var(--green-mid);
+  font-weight: 700;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.aff-link::after { content: ' →'; }
+
+/* ===== FOOTER ===== */
+footer {
+  background: #0d2206;
+  color: rgba(255,255,255,0.55);
+  text-align: center;
+  padding: 3rem 1.5rem;
+  font-size: 0.83rem;
+}
+footer strong {
+  display: block;
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 0.5rem;
+}
+footer .footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+  list-style: none;
+  flex-wrap: wrap;
+}
+footer .footer-links a { color: var(--accent); text-decoration: none; font-size: 0.82rem; }
+footer .op { margin-top: 0.75rem; opacity: 0.4; font-size: 0.78rem; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 680px) {
+  .nav-links { display: none; }
+  .hero-title { font-size: 2.2rem; }
+  .services-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">🌱 <span>アグリ・コンパス</span></a>
+  <ul class="nav-links">
+    <li><a href="#quiz">就農診断</a></li>
+    <li><a href="#services">体験・申込</a></li>
+    <li><a href="#advice">就農アドバイス</a></li>
+    <li><a href="#subsidy">補助金情報</a></li>
+    <li><a href="#affiliate" class="nav-cta">おすすめ情報</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">埼玉県嵐山町 × 農業4年目の実践者が本音で語る</div>
+  <h1 class="hero-title">
+    あなたの農業スタイル、<br><em>5分で分かる。</em>
+  </h1>
+  <p class="hero-sub">
+    就農診断から市民農園・野菜セット・収穫体験まで。<br>
+    失敗しない就農のリアルをぜんぶここに。
+  </p>
+  <div class="hero-actions">
+    <a href="#quiz" class="btn-primary">🌿 就農スタイル診断をはじめる</a>
+    <a href="#services" class="btn-outline">体験・申込を見る</a>
+  </div>
+  <div class="hero-scroll">▼ スクロール</div>
+</section>
+
+<!-- QUIZ -->
+<section id="quiz">
+  <div class="container">
+    <p class="section-eye">DIAGNOSIS</p>
+    <h2 class="section-h">あなたに合う<br>農業スタイルを診断</h2>
+    <p class="section-lead">4つの質問に答えるだけ。農業4年目の実践者が設計した診断で、あなたに合ったスタイルが分かります。</p>
+
+    <div class="quiz-box">
+      <!-- Progress -->
+      <div class="quiz-progress" id="progressDots">
+        <div class="quiz-dot current" id="dot0"></div>
+        <div class="quiz-dot" id="dot1"></div>
+        <div class="quiz-dot" id="dot2"></div>
+        <div class="quiz-dot" id="dot3"></div>
+      </div>
+
+      <!-- Q1 -->
+      <div class="quiz-step active" id="step0">
+        <div class="quiz-num">Q1 / 4</div>
+        <div class="quiz-q">農業にかけられる時間はどのくらいですか？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" onclick="selectOpt(0,0,this)">週末のみ（土日2日程度）</button>
+          <button class="quiz-opt" onclick="selectOpt(0,1,this)">週に2〜3日は確保できる</button>
+          <button class="quiz-opt" onclick="selectOpt(0,2,this)">平日含めフルタイムで取り組みたい</button>
+          <button class="quiz-opt" onclick="selectOpt(0,3,this)">まだ働きながら少しずつ始めたい</button>
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="quiz-step" id="step1">
+        <div class="quiz-num">Q2 / 4</div>
+        <div class="quiz-q">農業に使える初期資金はどのくらいですか？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" onclick="selectOpt(1,0,this)">ほぼゼロ、できるだけ低コストで始めたい</button>
+          <button class="quiz-opt" onclick="selectOpt(1,1,this)">50万円程度なら出せる</button>
+          <button class="quiz-opt" onclick="selectOpt(1,2,this)">200〜500万円の初期投資は可能</button>
+          <button class="quiz-opt" onclick="selectOpt(1,3,this)">補助金も活用して本格的に投資したい</button>
+        </div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="quiz-step" id="step2">
+        <div class="quiz-num">Q3 / 4</div>
+        <div class="quiz-q">農業に何を求めていますか？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" onclick="selectOpt(2,0,this)">趣味・健康・自然とのふれあい</button>
+          <button class="quiz-opt" onclick="selectOpt(2,1,this)">副収入・セカンドキャリアとして</button>
+          <button class="quiz-opt" onclick="selectOpt(2,2,this)">農業で本業として生計を立てたい</button>
+          <button class="quiz-opt" onclick="selectOpt(2,3,this)">加工・販売・6次産業化に興味がある</button>
+        </div>
+      </div>
+
+      <!-- Q4 -->
+      <div class="quiz-step" id="step3">
+        <div class="quiz-num">Q4 / 4</div>
+        <div class="quiz-q">地方移住や拠点を変えることについては？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" onclick="selectOpt(3,0,this)">今の生活を変えずに農業を楽しみたい</button>
+          <button class="quiz-opt" onclick="selectOpt(3,1,this)">週末だけ農村エリアに行く二拠点生活に興味</button>
+          <button class="quiz-opt" onclick="selectOpt(3,2,this)">将来的には地方移住・就農を考えている</button>
+          <button class="quiz-opt" onclick="selectOpt(3,3,this)">すぐにでも移住して農業を始めたい</button>
+        </div>
+      </div>
+
+      <!-- Result -->
+      <div class="quiz-result" id="quizResult">
+        <div class="result-card" id="resultCard">
+          <div class="result-type">診断結果</div>
+          <div class="result-title" id="resultTitle"></div>
+          <div class="result-text" id="resultText"></div>
+          <div id="resultLinks"></div>
+          <button class="result-reset" onclick="resetQuiz()">もう一度診断する</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <p class="section-eye">SERVICES</p>
+    <h2 class="section-h">体験・お申込み</h2>
+    <p class="section-lead">嵐山町の農地で、農業の第一歩を踏み出してみませんか。</p>
+
+    <div class="services-grid">
+
+      <!-- 収穫体験 -->
+      <div class="service-card">
+        <div class="service-img">
+          <img src="https://images.unsplash.com/photo-1500651230702-0e2d8a49d4e5?w=600&auto=format&fit=crop" alt="収穫体験の様子" onerror="this.parentNode.innerHTML='🌾'">
+        </div>
+        <div class="service-body">
+          <span class="service-badge">収穫体験</span>
+          <div class="service-name">嵐山で収穫体験＆農園見学</div>
+          <div class="service-desc">
+            20,000坪の農地で実際の農作業を体験。旬の野菜収穫・農園見学・お昼ごはんつきのフルコース体験です。農業4年目のスタッフが丁寧にご案内します。
+          </div>
+          <div class="service-price">¥3,000<span class="service-price-sub">／人（お昼つき）</span></div>
+          <a href="#contact-form" class="service-link">参加申込・日程確認</a>
+        </div>
+      </div>
+
+      <!-- 市民農園 -->
+      <div class="service-card">
+        <div class="service-img">
+          <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&auto=format&fit=crop" alt="市民農園の様子" onerror="this.parentNode.innerHTML='🏡'">
+        </div>
+        <div class="service-body">
+          <span class="service-badge">市民農園</span>
+          <div class="service-name">ふれあい市民農園しかむら</div>
+          <div class="service-desc">
+            嵐山町の自然の中で50㎡（5×10m）の区画をご利用いただけます。トイレ・手洗い場・井戸水・無料駐車場完備。随時受付中です。
+          </div>
+          <div class="service-price">¥7,000<span class="service-price-sub">／区画・年間</span></div>
+          <a href="https://shikamura-nouen.vercel.app" target="_blank" class="service-link">農園サイト（ふれあい市民農園しかむら）で申込む →</a>
+        </div>
+      </div>
+
+      <!-- 野菜セット 60 -->
+      <div class="service-card">
+        <div class="service-img">
+          <img src="https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?w=600&auto=format&fit=crop" alt="無農薬野菜セット" onerror="this.parentNode.innerHTML='🥦'">
+        </div>
+        <div class="service-body">
+          <span class="service-badge">無農薬野菜セット</span>
+          <div class="service-name">旬の野菜セット（お試し）</div>
+          <div class="service-desc">
+            嵐山の畑で育てた無農薬野菜をお届け。収穫のタイミングで旬のものをセット。農薬・化学肥料不使用。
+          </div>
+          <div class="service-price">¥2,300<span class="service-price-sub">／60サイズ・送料込</span></div>
+          <a href="#order" class="service-link">注文する</a>
+        </div>
+      </div>
+
+      <!-- 野菜セット 100 -->
+      <div class="service-card">
+        <div class="service-img">
+          <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=600&auto=format&fit=crop" alt="たっぷり野菜セット" onerror="this.parentNode.innerHTML='🥕'">
+        </div>
+        <div class="service-body">
+          <span class="service-badge">無農薬野菜セット</span>
+          <div class="service-name">旬の野菜セット（たっぷり）</div>
+          <div class="service-desc">
+            ファミリーや料理好きの方へ。旬の野菜8〜12品をたっぷりお届け。収穫次第の不定期発送なので、農家の暮らしのリズムが届きます。
+          </div>
+          <div class="service-price">¥5,000<span class="service-price-sub">／100サイズ・送料込</span></div>
+          <a href="#order" class="service-link">注文する</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ADVICE -->
+<section id="advice">
+  <div class="container">
+    <p class="section-eye">REAL ADVICE</p>
+    <h2 class="section-h">農業4年目が語る<br>リアルな就農アドバイス</h2>
+    <p class="section-lead">行政サイトには絶対に書いていない、失敗しないための本音アドバイスです。</p>
+
+    <div class="advice-grid">
+      <div class="advice-card">
+        <div class="advice-num">01</div>
+        <div class="advice-title">いきなり会社を辞めるのは絶対NG</div>
+        <div class="advice-text">農業収入が安定するまでには最低2〜3年かかります。副業・市民農園・週末農業から始めて、感覚をつかんでから本格就農するのが正解。</div>
+        <span class="advice-tag">4年目の失敗談</span>
+      </div>
+      <div class="advice-card">
+        <div class="advice-num">02</div>
+        <div class="advice-title">農地は「借りられる」かが最大の壁</div>
+        <div class="advice-text">農地を借りるには地域コミュニティの信頼が必要です。まず農業委員会・農地中間管理機構に相談し、地域に顔を売ることから始めましょう。</div>
+        <span class="advice-tag good">実践的アドバイス</span>
+      </div>
+      <div class="advice-card">
+        <div class="advice-num">03</div>
+        <div class="advice-title">収益の多角化が安定の鍵</div>
+        <div class="advice-text">野菜の販売だけでは不安定。体験農園・直売・加工品・補助金・農業体験の組み合わせが現実的な収益モデルです。実際にこのサイトがその実例。</div>
+        <span class="advice-tag good">収益化のコツ</span>
+      </div>
+      <div class="advice-card">
+        <div class="advice-num">04</div>
+        <div class="advice-title">補助金の期限を絶対に逃すな</div>
+        <div class="advice-text">新規就農の補助金（月12.5万円）は条件を満たせば最長3年受給できます。ただし申請タイミングを逃すと受けられない。就農前から準備が必要です。</div>
+        <span class="advice-tag">お金の話</span>
+      </div>
+      <div class="advice-card">
+        <div class="advice-num">05</div>
+        <div class="advice-title">「有機・無農薬」は武器になる</div>
+        <div class="advice-text">慣行農業との価格競争は厳しい。無農薬・無化学肥料の付加価値と、生産者の顔が見える直接販売こそが個人農家の勝ちパターンです。</div>
+        <span class="advice-tag good">差別化戦略</span>
+      </div>
+      <div class="advice-card">
+        <div class="advice-num">06</div>
+        <div class="advice-title">体験農業から始めると失敗が少ない</div>
+        <div class="advice-text">市民農園や収穫体験で1年間「農業の現実」を体感してから判断するのがベスト。理想と現実のギャップを少ない損失で確認できます。</div>
+        <span class="advice-tag good">スタートの正解</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SUBSIDY -->
+<section id="subsidy">
+  <div class="container">
+    <p class="section-eye">SUBSIDY</p>
+    <h2 class="section-h">新規就農者が使える<br>補助金・支援制度</h2>
+    <p class="section-lead">条件を満たせば毎月12.5万円×最長3年。知らないと損する制度をまとめました。</p>
+
+    <div class="subsidy-cards">
+
+      <div class="subsidy-card">
+        <span class="sub-badge">最重要</span>
+        <div class="sub-title">経営開始資金<br>（農業次世代人材投資資金）</div>
+        <div class="sub-amount">月12.5万円</div>
+        <div class="sub-period">最長3年間（年間最大150万円）</div>
+        <ul class="sub-conditions">
+          <li>就農時の年齢が49歳以下</li>
+          <li>認定新規就農者であること</li>
+          <li>独立・自営就農を目指す方</li>
+          <li>世帯所得が原則600万円以下</li>
+          <li>5年間の就農継続が条件</li>
+        </ul>
+      </div>
+
+      <div class="subsidy-card">
+        <span class="sub-badge">就農前</span>
+        <div class="sub-title">就農準備資金<br>（研修期間中の支援）</div>
+        <div class="sub-amount">月12.5万円</div>
+        <div class="sub-period">最長2年間（研修期間中）</div>
+        <ul class="sub-conditions">
+          <li>49歳以下で独立就農を目指す方</li>
+          <li>都道府県認定の研修機関で学ぶ</li>
+          <li>農業大学校・先進農家での研修</li>
+          <li>生活保護等との重複受給不可</li>
+        </ul>
+      </div>
+
+      <div class="subsidy-card">
+        <span class="sub-badge">設備投資</span>
+        <div class="sub-title">経営発展支援事業<br>（機械・設備の補助）</div>
+        <div class="sub-amount">最大500万円</div>
+        <div class="sub-period">補助率1/2以内</div>
+        <ul class="sub-conditions">
+          <li>認定新規就農者が対象</li>
+          <li>農機具・ハウス等の整備</li>
+          <li>経営計画の提出が必要</li>
+          <li>都道府県・市町村が窓口</li>
+        </ul>
+      </div>
+
+      <div class="subsidy-card">
+        <span class="sub-badge">農地取得</span>
+        <div class="sub-title">農地中間管理機構<br>（農地の借り受け支援）</div>
+        <div class="sub-amount">借地料支援あり</div>
+        <div class="sub-period">中長期の農地利用</div>
+        <ul class="sub-conditions">
+          <li>農地の借り入れをサポート</li>
+          <li>各都道府県の機構が対応</li>
+          <li>地主との交渉を代行</li>
+          <li>埼玉県：埼玉県農林公社が窓口</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="subsidy-note">
+      ⚠️ <strong style="color:#fff;">申請は就農前から準備が必要です。</strong>
+      補助金の受給には「認定新規就農者」の認定取得が必須で、市町村農業委員会への申請が必要です。就農の2〜3ヶ月前には動き始めましょう。嵐山町での就農を検討中の方は、お気軽にご相談ください。
+    </div>
+  </div>
+</section>
+
+<!-- AFFILIATE -->
+<section id="affiliate">
+  <div class="container">
+    <p class="section-eye">RESOURCES</p>
+    <h2 class="section-h">就農・移住に役立つ<br>おすすめ情報</h2>
+    <p class="section-lead">農業スクール・地方移住・就農FC情報をまとめました。</p>
+
+    <div class="affiliate-grid">
+      <div class="aff-card">
+        <div class="aff-icon">🏫</div>
+        <div class="aff-title">農業スクール・体験講座</div>
+        <div class="aff-desc">まず農業を「体験する」ところから。週末農業スクールや農業経営講座で基礎を学べます。</div>
+        <span class="aff-reward">体験申込で報酬発生</span>
+        <a href="#" class="aff-link">おすすめスクールを見る</a>
+      </div>
+      <div class="aff-card">
+        <div class="aff-icon">🏡</div>
+        <div class="aff-title">地方移住・古民家物件</div>
+        <div class="aff-desc">農業と地方移住を一緒に考えたい方へ。古民家再生・田舎暮らし向け住宅の資料請求はこちら。</div>
+        <span class="aff-reward">資料請求1件 数千〜数万円</span>
+        <a href="#" class="aff-link">物件情報を見る</a>
+      </div>
+      <div class="aff-card">
+        <div class="aff-icon">🤝</div>
+        <div class="aff-title">農業FC・無人直売所</div>
+        <div class="aff-desc">「農業をビジネスとして始めたい」方向けのFC・独立開業情報。無人直売所ビジネスも注目。</div>
+        <span class="aff-reward">資料請求1件 数万円</span>
+        <a href="#" class="aff-link">FC情報を見る</a>
+      </div>
+      <div class="aff-card">
+        <div class="aff-icon">📚</div>
+        <div class="aff-title">農業・就農おすすめ書籍</div>
+        <div class="aff-desc">農業経営・有機農法・地方移住のリアルが学べる書籍をセレクトしました。</div>
+        <span class="aff-reward">Amazon アソシエイト</span>
+        <a href="#" class="aff-link">書籍一覧を見る</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <strong>🌱 アグリ・コンパス</strong>
+  埼玉県比企郡嵐山町 ／ 農業4年目の実践者が運営
+  <ul class="footer-links">
+    <li><a href="#quiz">就農診断</a></li>
+    <li><a href="#services">体験・申込</a></li>
+    <li><a href="#subsidy">補助金情報</a></li>
+    <li><a href="https://shikamura-nouen.vercel.app" target="_blank">ふれあい市民農園しかむら</a></li>
+    <li><a href="https://noir-agri.com/" target="_blank">合同会社ノワールアグリ</a></li>
+  </ul>
+  <p class="op">運営：<a href="https://noir-agri.com/" target="_blank" style="color:var(--accent);">合同会社ノワールアグリ</a> ／ ASlink株式会社グループ</p>
+</footer>
+
+<script>
+const answers = [null, null, null, null];
+let currentStep = 0;
+
+function selectOpt(step, val, el) {
+  answers[step] = val;
+  document.querySelectorAll('#step' + step + ' .quiz-opt').forEach(o => o.classList.remove('selected'));
+  el.classList.add('selected');
+  setTimeout(() => {
+    if (step < 3) {
+      goToStep(step + 1);
+    } else {
+      showResult();
+    }
+  }, 350);
+}
+
+function goToStep(n) {
+  document.querySelectorAll('.quiz-step').forEach(s => s.classList.remove('active'));
+  document.getElementById('step' + n)?.classList.add('active');
+  currentStep = n;
+  updateDots();
+}
+
+function updateDots() {
+  for (let i = 0; i < 4; i++) {
+    const d = document.getElementById('dot' + i);
+    d.className = 'quiz-dot';
+    if (i < currentStep) d.classList.add('done');
+    else if (i === currentStep) d.classList.add('current');
+  }
+}
+
+const results = [
+  {
+    title: '週末農業・市民農園スタート型',
+    text: '今の生活を変えずに農業を楽しみたいあなたには、まず市民農園からのスタートが最適です。年間7,000円で50㎡の区画を借りて、土に触れる感覚をつかみましょう。嵐山の収穫体験イベントもおすすめです。',
+    links: ['#services']
+  },
+  {
+    title: '二拠点生活・週末就農型',
+    text: '都市生活を続けながら農業にも関わりたいあなたには、週末だけ嵐山に来る二拠点スタイルが向いています。市民農園＋収穫体験でリズムをつかみながら、移住タイミングを見極めましょう。',
+    links: ['#services', '#subsidy']
+  },
+  {
+    title: '本格就農・補助金活用型',
+    text: '本気で農業で生きていきたいあなたは、新規就農者向け補助金（月12.5万円×最長3年）を活用できます。まず認定新規就農者の申請手続きから始め、農地確保と並行して進めましょう。',
+    links: ['#subsidy', '#advice']
+  },
+  {
+    title: '6次産業・加工ビジネス型',
+    text: '農業＋加工・販売・体験を組み合わせたビジネスモデルを目指すあなたには、農業FCや加工品ビジネスの情報が参考になります。補助金も活用しながら、収益多角化の計画を立てましょう。',
+    links: ['#affiliate', '#subsidy']
+  }
+];
+
+function showResult() {
+  document.querySelectorAll('.quiz-step').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.quiz-dot').forEach(d => { d.className = 'quiz-dot done'; });
+  const quizResult = document.getElementById('quizResult');
+  quizResult.classList.add('active');
+
+  const score = answers.reduce((acc, a) => acc + (a || 0), 0);
+  const idx = Math.min(Math.floor(score / 4), 3);
+  const r = results[idx];
+  document.getElementById('resultTitle').textContent = r.title;
+  document.getElementById('resultText').textContent = r.text;
+  const linksDiv = document.getElementById('resultLinks');
+  linksDiv.innerHTML = r.links.map((l, i) => {
+    const labels = { '#services': '体験・申込を見る', '#subsidy': '補助金情報を見る', '#advice': '就農アドバイスを読む', '#affiliate': 'おすすめ情報を見る' };
+    return `<a href="${l}" class="result-next">${labels[l] || '詳しく見る'}</a>`;
+  }).join('');
+}
+
+function resetQuiz() {
+  answers.fill(null);
+  document.querySelectorAll('.quiz-opt').forEach(o => o.classList.remove('selected'));
+  document.getElementById('quizResult').classList.remove('active');
+  goToStep(0);
+  document.querySelector('.quiz-step').classList.add('active');
+}
+</script>
+</body>
+</html>
